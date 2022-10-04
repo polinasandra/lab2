@@ -1,14 +1,14 @@
 # АНАЛИЗ ДАННЫХ И ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ [in GameDev]
 Отчет по лабораторной работе #1 выполнил(а):
-- Иванова Ивана Варкравтовна
-- РИ000024
+- Беспалова Полина Александровна
+- РИ210910
 Отметка о выполнении заданий (заполняется студентом):
 
 | Задание | Выполнение | Баллы |
 | ------ | ------ | ------ |
-| Задание 1 | # | 60 |
-| Задание 2 | # | 20 |
-| Задание 3 | # | 20 |
+| Задание 1 | * | 60 |
+| Задание 2 | * | 20 |
+| Задание 3 | * | 20 |
 
 знак "*" - задание выполнено; знак "#" - задание не выполнено;
 
@@ -26,114 +26,136 @@
 - Данные о работе: название работы, фио, группа, выполненные задания.
 - Цель работы.
 - Задание 1.
-- Код реализации выполнения задания. Визуализация результатов выполнения (если применимо).
+- Код реализации выполнения задания. Визуализация результатов выполнения.
 - Задание 2.
-- Код реализации выполнения задания. Визуализация результатов выполнения (если применимо).
+- Код реализации выполнения задания. Визуализация результатов выполнения.
 - Задание 3.
-- Код реализации выполнения задания. Визуализация результатов выполнения (если применимо).
+- Код реализации выполнения задания. Визуализация результатов выполнения.
 - Выводы.
-- ✨Magic ✨
 
 ## Цель работы
 Ознакомиться с основными операторами зыка Python на примере реализации линейной регрессии.
 
 ## Задание 1
-### Пошагово выполнить каждый пункт раздела "ход работы" с описанием и примерами реализации задач
+### Написать программы Hello World на Python и Unity:
 Ход работы:
-- Произвести подготовку данных для работы с алгоритмом линейной регрессии. 10 видов данных были установлены случайным образом, и данные находились в линейной зависимости. Данные преобразуются в формат массива, чтобы их можно было вычислить напрямую при использовании умножения и сложения.
-
-```py
-
-In [ ]:
-#Import the required modules, numpy for calculation, and Matplotlib for drawing
-import numpy as np
-import matplotlib.pyplot as plt
-#This code is for jupyter Notebook only
-%matplotlib inline
-
-# define data, and change list to array
-x = [3,21,22,34,54,34,55,67,89,99]
-x = np.array(x)
-y = [2,22,24,65,79,82,55,130,150,199]
-y = np.array(y)
-
-#Show the effect of a scatter plot
-plt.scatter(x,y)
-
-```
-
-- Определите связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
-
+- Код и вывод программы на языке Python:
+![Скриншот 19-09-2022 185326](https://user-images.githubusercontent.com/113704972/191034079-c9fd96ed-2e6f-4131-aa44-c6f5919661fa.jpg)
+Демонстрация сохранения документа GoogleCollab на мой диск:
+![Скриншот 19-09-2022 185341](https://user-images.githubusercontent.com/113704972/191034073-4b87c9b8-cdf9-4e40-a5da-eaf616e1161d.jpg)
+- Для Unity:
+ создаем новый объект, в Assets создаем C# Script и пишем код для вывода Hello, world!
+![Скриншот 19-09-2022 184421](https://user-images.githubusercontent.com/113704972/191034577-da2b04b7-bae1-4b12-b9fd-7b64b9f742a2.jpg)
+Добавляем наш скрипт в объект и запускаем код:
+![Скриншот 19-09-2022 183913](https://user-images.githubusercontent.com/113704972/191034654-cfe6ed1b-92e8-4d33-98f8-06669882402e.jpg)
+- Начинаю итерацию. Шаг 1: Инициализация и модель итеративной оптимизации
 
 ## Задание 2
-### Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ.
+### В разделе "Ход работы" пошагово выполнить каждый пункт с описанием и примеров реализации задачи по теме лабораторной работы.
 
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
+- Произвожу подготовку данных для работы с алгоритмом линейной регрессии:
+![Скриншот 19-09-2022 191154](https://user-images.githubusercontent.com/113704972/191054986-1ddbf97e-fa57-480c-b325-4e67ae8ce32f.jpg)
 
-```py
+- Определяю связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
+![Скриншот 19-09-2022 192121](https://user-images.githubusercontent.com/113704972/191055044-ece15049-c9b4-4e48-95cc-6b4cf6c1c29f.jpg)
 
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
+- Начинаю итерацию. Шаг 1. Инициализация и модель итеративной оптимизации:
+![Скриншот 19-09-2022 204527](https://user-images.githubusercontent.com/113704972/191058485-0ad0caff-00ee-4bc5-bf79-927476020bf9.jpg)
 
-```
+- Шаг 2. На второй итерации отображается значения параметров, значения потерь и эффекты визулизации после итерации:
+![Скриншот 19-09-2022 205002](https://user-images.githubusercontent.com/113704972/191059356-e9ec4249-bde7-42dc-a818-db6d7ac13659.jpg)
+
+
+Шаг 3. Третья итерация показывает значения параметров, значения потерь и визуализацию после итерации:
+![Скриншот 19-09-2022 205029](https://user-images.githubusercontent.com/113704972/191059394-99f7df2e-2796-48cd-a740-ac813ec13746.jpg)
+
+
+Шаг 4. На четвёртой итерации отображаются значения параметров, значения потерь и эффекты визулизации:
+![Скриншот 19-09-2022 205038](https://user-images.githubusercontent.com/113704972/191059427-e1c2641d-f6b7-4034-8c56-a0949303a331.jpg)
+
+
+Шаг 5. Пятая итерация показывает значение параметра, значение потерь и эффект визуализации после итерации:
+![Скриншот 19-09-2022 205049](https://user-images.githubusercontent.com/113704972/191059466-25ca7819-dc28-4f35-9fdb-55d8b89f62ce.jpg)
+
+Шаг 6. 10000-я итерация, показывающая значение параметров, потери и визуализацию после итерации:
+![Скриншот 19-09-2022 205207](https://user-images.githubusercontent.com/113704972/191059802-9f30dae2-b51a-41b8-91b4-a2d0be40c104.jpg)
+
+В ходе выполнения программы появится график:
+![Скриншот 19-09-2022 215330](https://user-images.githubusercontent.com/113704972/191071397-6c0e4fad-4e96-4462-b6db-51e224bb5dac.jpg)
+
 
 ## Задание 3
-### Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
-
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
+### Изучить код на Python и ответить на вопросы:
 
 ```py
 
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
+import numpy as np
+import matplotlib.pyplot as plt
+
+x=[3,21,22,34,54,34,55,67,89,99]
+x=np.array(x)
+y=[2,22,24,65,79,82,55,130,150,199]
+y=np.array(y)
+
+plt.scatter(x,y)
+
+def model(a,b,x):
+    return a*x+b
+
+def loss_function(a,b,x,y):
+    num = len(x)
+    prediction = model(a,b,x)
+    return (0.5/num)*(np.square(prediction-y)).sum()
+
+def optimize(a,b,x,y):
+    num = len(x)
+    prediction = model(a,b,x)
+    da = (1.0/num) * ((prediction -y)*x).sum()
+    db = (1.0/num) * ((prediction - y).sum())
+    a = a-Lr*da
+    b - b - Lr*db
+    return a,b
+
+def iterate(a,b,x,y,times):
+    for i in range(times):
+        a,b = optimize(a,b,x,y)
+        return (a,b)
+
+a=np.random.rand(1)
+print(a)
+b=np.random.rand(1)
+print(b)
+Lr = 0.0000001
+
+a,b = iterate(a,b,x,y,1)
+prediction = model(a,b,x)
+loss = loss_function(a,b,x,y)
+print(a,b,loss)
+plt.scatter(x,y)
+plt.plot(x,prediction)
+
 
 ```
+- Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ.
+
+Loss может стремиться к нулю при x = y и b = 0, либо если значения x и y стремятся к нулю:
+![Скриншот 19-09-2022 215920](https://user-images.githubusercontent.com/113704972/191072431-7ca6040f-caab-4ee1-ae44-7412e0d6f180.jpg)
+
+Однако, если данные будут случайные и при этом x != y и b != 0, величина loss не будет стремиться к нулю:
+![Скриншот 19-09-2022 220042](https://user-images.githubusercontent.com/113704972/191072652-80c90f25-1aef-4107-b39e-635e4dd4a31b.jpg)
+
+- Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
+
+Этот параметр меняет значения а, b, loss. Чем меньше Lr, тем меньше изменятся a, b, тем больше изменится loss; чем больше Lr, тем сильнее изменятся a, b, и тем меньше изменится loss.
+
+При бесконечно малом Lr = 0.0000001: 
+![Скриншот 19-09-2022 220518](https://user-images.githubusercontent.com/113704972/191073557-88643c02-8074-4fcd-95d5-45929c238f75.jpg)
+
+Увеличим Lr  = 0.001: 
+![Скриншот 19-09-2022 220532](https://user-images.githubusercontent.com/113704972/191073624-5b29286f-66a4-4def-9f12-ad5edb946a86.jpg)
+
 
 ## Выводы
 
-Абзац умных слов о том, что было сделано и что было узнано.
+При выполнении лабораторной работы я настроила  программное обеспечение (Unity, Visual Studio, PyCharm) для дальнейшней работы с ними. Написала Hello World в Unity и в PyCharm'е. Поняла, как пользоваться GoogleCollab и GitHub. Также ознакомилась с основными операторами зыка Python на примере реализации линейной регрессии, научилась анализировать работу программы.
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
-
-## Powered by
-
-**BigDigital Team: Denisov | Fadeev | Panov**
